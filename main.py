@@ -24,7 +24,7 @@ template = {
 
 for price in tqdm(range(min_price, max_price)):
     run_input = dict(template)
-    run_input["priceMin"] = min_price
-    run_input["priceMax"] = max_price
+    run_input["priceMin"] = price
+    run_input["priceMax"] = price + 1
     run = client.actor("GsNzxEKzE2vQ5d9HN").call(run_input=run_input)
 
