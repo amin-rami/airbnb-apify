@@ -6,8 +6,8 @@ from tqdm import tqdm
 load_dotenv()
 
 API_TOKEN = os.getenv("APIFY_API_TOKEN")
-min_price = os.getenv("MIN_PRICE")
-max_price = os.getenv("MAX_PRICE")
+min_price = int(os.getenv("MIN_PRICE"))
+max_price = int(os.getenv("MAX_PRICE"))
 
 
 client = ApifyClient(token=API_TOKEN)
