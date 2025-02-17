@@ -9,7 +9,7 @@ load_dotenv()
 API_TOKEN = os.getenv("APIFY_API_TOKEN")
 DATASET_ID = os.getenv("DATASET_ID")
 ACTOR_ID = os.getenv("ACTOR_ID")
-MAX_RUNNER_INSTANCES= int(os.getenv("MAX_RUNNER_INSTANCES"))
+MAX_RUNNER_INSTANCES = int(os.getenv("MAX_RUNNER_INSTANCES"))
 MIN_PRICE = int(os.getenv("MIN_PRICE"))
 MAX_PRICE = int(os.getenv("MAX_PRICE"))
 

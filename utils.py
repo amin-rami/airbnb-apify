@@ -42,12 +42,12 @@ async def scrape(
         start = start_price + i * number_of_runners
         end = min(start_price + (i + 1) * number_of_runners, end_price)
         tasks = [
-            get_price_range_results(client, actor_id, run_config, price) 
+            get_price_range_results(client, actor_id, run_config, price)
             for price in range(start, end)
         ]
         runs = await asyncio.gather(*tasks)
-        
+
         tasks = [push_data_to_target_dataset(client, run["defaultDatasetId"], destination_dataset_id) for run in runs]
         await asyncio.gather(*tasks)
-        
+
         logger.info(f"scraped and saved prices {start} through {end}")
