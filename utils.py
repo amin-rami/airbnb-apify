@@ -2,6 +2,7 @@ from apify_client import ApifyClientAsync
 import math
 import asyncio
 from tqdm import tqdm
+from loggers import logger
 
 
 async def get_price_range_results(
@@ -48,3 +49,5 @@ async def scrape(
         
         tasks = [push_data_to_target_dataset(client, run["defaultDatasetId"], destination_dataset_id) for run in runs]
         await asyncio.gather(*tasks)
+        
+        logger.info(f"scraped and saved prices {start} through {end}")
